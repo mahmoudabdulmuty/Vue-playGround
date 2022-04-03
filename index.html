@@ -8,6 +8,16 @@
     <title>index</title>
   </head>
   <body>
-    <script src="app.js"></script>
+    <div id="app">{{message}}</div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            message: 'Hello Vue 3 ',
+          };
+        },
+      }).mount('#app');
+    </script>
   </body>
 </html>
