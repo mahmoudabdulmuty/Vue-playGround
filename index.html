@@ -20,6 +20,8 @@
   </head>
   <body>
     <div id="app" v-cloak>
+      <login-form />
+
       <h1>{{message}}</h1>
       <p>{{msg}}</p>
       <input @keyup.enter="greet(msg)" v-model="message" type="text" />
@@ -30,7 +32,7 @@
 
     <script src="https://unpkg.com/vue@next"></script>
     <script>
-      Vue.createApp({
+      const app = Vue.createApp({
         data() {
           return {
             message: 'Hello Vue 3 ',
@@ -46,7 +48,33 @@
             console.log(msg);
           },
         },
-      }).mount('#app');
+      });
+
+      app.component('login-form', {
+        template: `
+          <form @submit.prevent='handleSubmit' >
+            <h1> {{ title }} </h1>
+            <input type="text" v-model='email' />
+            <input type="password" v-model='password' />
+            <input type="submit" />
+          </form>
+        `,
+
+        data() {
+          return {
+            title: 'Login Form',
+            email: '',
+            password: '',
+          };
+        },
+        methods: {
+          handleSubmit() {
+            console.log(this.email, this.password);
+          },
+        },
+      });
+
+      app.mount('#app');
     </script>
   </body>
 </html>
