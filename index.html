@@ -8,13 +8,16 @@
   </head>
   <body>
     <div id="app">
-      <div>
+      <form @submit.prevent="addGoal">
         <label for="goal">Goal</label>
-        <input type="text" id="goal" />
+        <input type="text" id="goal" v-model="enteredValue" />
         <button>Add Goal</button>
-      </div>
-      <ul></ul>
+      </form>
+      <ul v-for="item in list">
+        {{ item }}
+      </ul>
     </div>
+    <script src="https://unpkg.com/vue@3"></script>
     <script src="app.js"></script>
   </body>
 </html>
