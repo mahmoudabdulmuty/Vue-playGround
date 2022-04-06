@@ -1,17 +1,17 @@
-const app = Vue.createApp({
+const assignment = Vue.createApp({
   data() {
     return {
-      courseGoalOne: 'Finish the course and Learn Vue!',
-      courseGoalTwo: 'Master Vue and Build Some Projects!',
-      vueLink: 'https://vuejs.org/',
+      username: 'Mahmoud Abdulmuty',
+      age: 29,
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg',
     };
   },
   methods: {
-    outputGoal() {
-      const randomNum = Math.random();
-      return randomNum > 0.5 ? this.courseGoalOne : this.courseGoalTwo;
+    randomNum() {
+      return Math.random();
     },
   },
 });
 
-app.mount('#user-goal');
+assignment.mount('#assignment');
