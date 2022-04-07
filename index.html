@@ -22,8 +22,12 @@
       <button v-on:click="decrease(10)">Decrease 10</button>
       <p>Result: {{ counter }}</p>
 
-      <input type="text" v-on:input="setName($event, 'Abdulmuty')" />
-      <p>username : {{username}}</p>
+      <input
+        type="text"
+        v-on:input="setName($event, 'Abdulmuty')"
+        v-on:keyup.enter="setConfirmed"
+      />
+      <p>username : {{confirmedName}}</p>
     </section>
   </body>
 </html>
