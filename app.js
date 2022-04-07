@@ -1,17 +1,22 @@
-const assignment = Vue.createApp({
+const app = Vue.createApp({
   data() {
     return {
-      username: 'Mahmoud Abdulmuty',
-      age: 29,
-      image:
-        'https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg',
+      counter: 0,
     };
   },
+
   methods: {
-    randomNum() {
-      return Math.random();
+    increase() {
+      this.counter++;
+    },
+    decrease() {
+      if (this.counter === 0) {
+        this.counter = 0;
+        return;
+      }
+      this.counter--;
     },
   },
 });
 
-assignment.mount('#assignment');
+app.mount('#events');
