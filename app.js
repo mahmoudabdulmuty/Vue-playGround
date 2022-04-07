@@ -1,26 +1,21 @@
 const app = Vue.createApp({
   data() {
     return {
-      counter: 0,
-      username: '',
-      confirmedName: '',
+      output: '',
+      confirmed: '',
     };
   },
-
   methods: {
-    setConfirmed() {
-      this.confirmedName = this.username;
+    showAlert(text) {
+      alert(text);
     },
-    setName(event, lastName) {
-      this.username = event.target.value + ' ' + lastName;
+    showName(e) {
+      this.output = e.target.value;
     },
-    increase(num) {
-      this.counter += num;
-    },
-    decrease(num) {
-      this.counter -= num;
+    showConfirmed() {
+      this.confirmed = this.output;
     },
   },
 });
 
-app.mount('#events');
+app.mount('#assignment');
