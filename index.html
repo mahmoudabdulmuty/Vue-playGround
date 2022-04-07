@@ -18,8 +18,8 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click="increase">Increase</button>
-      <button v-on:click="decrease">Decrease</button>
+      <button v-on:click="increase(5)">Increase 5</button>
+      <button v-on:click="decrease(10)">Decrease 10</button>
       <p>Result: {{ counter }}</p>
     </section>
   </body>
