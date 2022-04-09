@@ -1,26 +1,17 @@
 const app = Vue.createApp({
   data() {
-    return {
-      className: '',
-      hidden: false,
-      visible: true,
-      inlineStyle: '',
-    };
-  },
-  computed: {
-    boxClasses() {
-      return {
-        hidden: this.hidden,
-        visible: this.visible,
-      };
-    },
+    return { goals: [], goal: '' };
   },
   methods: {
-    toggle() {
-      this.hidden = !this.hidden;
-      this.visible = !this.visible;
+    addGoal() {
+      this.goals.push(this.goal);
+    },
+    removeItem(i) {
+      this.goals.splice(i, 1);
     },
   },
 });
 
-app.mount('#assignment');
+app.mount('#user-goals');
+
+
