@@ -1,27 +1,19 @@
 const app = Vue.createApp({
   data() {
     return {
-      tasks: [],
-      userInput: '',
-      isVisible: true,
+      currentUserInput: '',
+      message: 'Vue is great!',
     };
   },
-  computed: {
-    buttonCaption() {
-      return this.isVisible ? 'Hide' : 'Show';
-    },
-  },
   methods: {
-    addTask() {
-      if (this.userInput) {
-        this.tasks.push(this.userInput);
-        this.userInput = '';
-      }
+    saveInput(event) {
+      this.currentUserInput = event.target.value;
     },
-    toggle() {
-      this.isVisible = !this.isVisible;
+    setText() {
+      // this.message = this.currentUserInput;
+      this.message = this.$refs.userText.value;
     },
   },
 });
 
-app.mount('#assignment');
+app.mount('#app');
