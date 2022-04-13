@@ -21,7 +21,7 @@
         <li v-for="friend in friends">
           <h2>{{friend.username}}</h2>
           <button @click="toggleDetails">{{detailsValue}} Details</button>
-          <ul v-if="isDetailsVisible">
+          <ul v-if="areDetailsVisible">
             <li>
               <strong>Phone:</strong>
               {{friend.phone}}

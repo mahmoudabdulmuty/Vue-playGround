@@ -13,19 +13,19 @@ const app = Vue.createApp({
           email: 'julie@localhost.com',
         },
       ],
-      isDetailsVisible: false,
+      areDetailsVisible: false,
     };
   },
 
   methods: {
     toggleDetails() {
-      this.isDetailsVisible = !this.isDetailsVisible;
+      this.areDetailsVisible = !this.areDetailsVisible;
     },
   },
 
   computed: {
     detailsValue() {
-      return this.isDetailsVisible ? 'Hide' : 'Show';
+      return this.areDetailsVisible ? 'Hide' : 'Show';
     },
   },
 });
