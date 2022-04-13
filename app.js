@@ -1,17 +1,31 @@
 const app = Vue.createApp({
   data() {
     return {
-      currentUserInput: '',
-      message: 'Vue is great!',
+      friends: [
+        {
+          username: 'Manuel Lorenz',
+          phone: '01234 5678 991',
+          email: 'manuel@localhost.com',
+        },
+        {
+          username: 'Julie Jones',
+          phone: '09876 543 221',
+          email: 'julie@localhost.com',
+        },
+      ],
+      isDetailsVisible: false,
     };
   },
+
   methods: {
-    saveInput(event) {
-      this.currentUserInput = event.target.value;
+    toggleDetails() {
+      this.isDetailsVisible = !this.isDetailsVisible;
     },
-    setText() {
-      // this.message = this.currentUserInput;
-      this.message = this.$refs.userText.value;
+  },
+
+  computed: {
+    detailsValue() {
+      return this.isDetailsVisible ? 'Hide' : 'Show';
     },
   },
 });
